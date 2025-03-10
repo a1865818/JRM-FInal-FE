@@ -48,8 +48,11 @@ const IssuesPage = () => {
 
   // Get hero section from the sections array
   const heroSection = pageData?.sections?.find(section => section.sectionType === 'hero');
-  console.log(heroSection.image.src);
 
+  // Log the value of heroSection.image.src
+  if (heroSection) {
+    console.log('Hero Section Image URL:', heroSection.image.src);
+  }
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -90,7 +93,7 @@ const IssuesPage = () => {
             <div className={styles.heroImage}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
-                src={heroSection.image.src} 
+                src= {heroSection.image.src}
                 alt="Dashboard preview" 
                 className={styles.dashboardImage}
                 width={heroSection.image.width}
